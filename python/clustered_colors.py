@@ -34,8 +34,6 @@ def get_sorted_rgb_by_brightness(json_path):
     
     for key, value in data.items():
       hsl_colors = [(colorsys.rgb_to_hls(*rgb)[1], rgb) for rgb in value]
-
-      # Sort by lightness value
       sorted_colors = [color[1] for color in sorted(hsl_colors, reverse=True)]
       dictionary[key] = sorted_colors
     return dictionary
